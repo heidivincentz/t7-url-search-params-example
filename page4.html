@@ -7,17 +7,19 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Page 2</h1>
-    <p>OK, glad to hear that you are a <span class="fruit"></span></p>
-    <p>Do you like to sleep?</p>
-    <ul>
-      <li><a href="page3.html?sleep=yes">Yes</a></li>
-      <li><a href="page3.html?sleep=no">No</a></li>
-    </ul>
+    <h1>Page 4</h1>
+    <p class="cheese">You are awesome</p>
+    <p class="nocheese">Blasphemy</p>
+
+
     <script>
       const urlParams = new URLSearchParams(window.location.search);
-      const fruit = urlParams.get("fruit");
-      document.querySelector(".fruit").textContent = fruit;
+      const moo = urlParams.get("cheese");
+      if (moo === "yes") {
+        document.querySelector(".nocheese").remove();
+      } else {
+        document.querySelector(".cheese").remove();
+      }
     </script>
   </body>
 </html>
